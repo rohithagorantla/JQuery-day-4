@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Life</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("div").dblclick(function(){
+    $( this ).toggleClass("divClass2");
+  });
+});
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("demo_test.asp", function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+});
+</script>
+
+<style> 
+.divClass1
+{
+    padding:5px;
+    text-align:center;
+    font-size:30px;
+    color: black;
+}
+.divClass2
+{
+    padding:5px;
+    text-align:center;
+    background-color:white;
+    border:solid 1px;
+}
+</style>
+   <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+    </script> 
+    <script> 
+        $(document).ready(function() { 
+            $("button").click(function() { 
+                $("#gfg").toggle(); 
+            }); 
+        }); 
+    </script> 
+    <style> 
+        #gfg { 
+            color: red; 
+            border: 2px solid black; 
+            width: 1300px; 
+	    background:orange;
+            text-align: center; 
+	    font-size: 40px;
+	    font-style:bold;
+	    padding:25px 25px 25px 25px;
+        } 
+    </style> 
+    </style> 
+	<script>
+// javascript function for fade effect toggling
+	function fadeToggle(div_id, button) {
+
+		if (button.value == 'Fade Out') {
+			$('#' + div_id).fadeOut('slow');
+			button.value = 'Fade In';
+		} else {
+			$('#' + div_id).fadeIn(2000);
+			button.value = 'Fade Out';
+		}
+	}
+	
+	function fadeToToggle(div_id, button) {
+
+		if (button.value == 'FadeTo 50%') {
+			$('#' + div_id).fadeTo('slow' , 0.5);
+			button.value = 'FadeTo 100%';
+		} else {
+			$('#' + div_id).fadeTo(4000 , 1.0);
+			button.value = 'FadeTo 50%';
+		}
+	}
+</script>
+<style>
+body,input {
+	font-family: Helvetica, Arial;
+}
+
+#fade, #fadeTo {
+	 font-size:30px;
+}
+</style>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.post("demo_test_post.asp",
+    {
+      name: "Donald Duck",
+      city: "Duckburg"
+    },
+    function(data,status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<div id="gfg">Life</div> <br><br><br>
+ <button>Click to hide and show the text</button> 
+
+<div class="divClass1">Don't Walk as if you rule the world <br><br>
+Walk as if you don't care what rules the world</div><br><br><br>
+
+<input type="button" value="Fade Out" onclick="fadeToggle('fade', this)" />
+	<br><br>
+	
+	<center><div id="fade"><b>Focus on you untill Focus is on you <b></div></center>
+	<br>
+	
+	<input type="button" value="FadeTo 50%" onclick="fadeToToggle('fadeTo', this)" /><br><br>
+	<center><div id="fadeTo">you have to go wholeheartedly into anything in order to achieve anything worth having</div></center><br><br>
+
+	<button>GET request</button><br><br>
+
+	<button>POST Request</button>
+    
+</body>
+</html>
